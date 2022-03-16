@@ -1,3 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #040216;
+  color: #ffffff;
+}
+.wrapper {
+  color: #ffffff;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 'h h'
+                       'n p';
+  grid-gap: 10px;
+  grid-template-columns: 2fr 10fr;
+}
+.header {
+  grid-area: h;
+}
+.profile {
+  grid-area: p;
+}
+.navbar {
+  grid-area: n;
+}
+.wrapper>div {
+  background-color: rgb( 70 , 79 , 121 );
+  border-radius: 10px;
+}
 .App {
   text-align: center;
 }
