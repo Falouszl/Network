@@ -19,15 +19,6 @@ body {
   grid-gap: 10px;
   grid-template-columns: 2fr 10fr;
 }
-.header {
-  grid-area: h;
-}
-.profile {
-  grid-area: p;
-}
-.navbar {
-  grid-area: n;
-}
 .wrapper>div {
   background-color: rgb( 70 , 79 , 121 );
   border-radius: 10px;

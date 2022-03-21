@@ -1,0 +1,25 @@
+.profile {
+    grid-area: p;
+}
+.me {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-gap: 10px;
+}
+.me img {
+    width: 100%;
+}
+.posts {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.posts img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+}
+.post {
+    margin: 20px 0px;
+}

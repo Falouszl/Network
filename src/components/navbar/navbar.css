@@ -1,10 +1,16 @@
 .navbar {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    grid-area: n;
 }
-.navbar a , .navbar h1 {
+.navbar a  {
     color: #fff;
     text-decoration: none;
     padding-left: 10px;
     padding-bottom: 10px;
+    border-radius: 10px;
+}
+.navbar a:hover {
+    background-color: #fff9;
 }
