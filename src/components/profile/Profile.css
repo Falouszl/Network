@@ -23,3 +23,9 @@
 .post {
     margin: 20px 0px;
 }
+.navbar a:nth-child(1) {
+    background-color: #fff9;
+}
+.navbar a:nth-child(2) {
+    background-color: none;
+}

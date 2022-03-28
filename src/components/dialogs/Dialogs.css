@@ -1,0 +1,23 @@
+.dialods {
+    grid-area: p;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    grid-template-rows: 0fr 0fr;
+    grid-gap: 20px;
+}
+.message {
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+}
+.send , .sendtext {
+    width: 200px;
+}
+.message>p ,.message >p  , .sendtext , .send{
+    margin: 30px;
+}
+.navbar a:nth-child(2) {
+    background-color: #fff9;
+}
+.navbar a:nth-child(1) {
+    background-color: none;
+}
