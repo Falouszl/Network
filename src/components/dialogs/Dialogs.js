@@ -1,37 +1,27 @@
 import React from "react";
 import './Dialogs.css';
-import { Navlink } from "react-router-dom";
+import Dialogs_item from "./dialogs_item/Dialogs_item";
+import Message from "./messages/message";
+import ReactDOM from "react-dom";
+import { NavLink , BrowserRouter as Router ,  Switch,
+    useLocation } from "react-router-dom";
 function Dialogs() {
     return (
         <div className="dialogs">
-
-            
-
-
-            <div className="message">
-                <p>Вася</p>
-                <p>привет , что задали по алгебре</p>
+            <div className="dialog">
+                <Dialogs_item name={"Иван"} id={'1'}/>
+                <Dialogs_item name={"Иллон"} id={'2'}/>
+                <Dialogs_item name={"Аркадий"} id={'3'}/>
             </div>
-            <div className="message">
-                <p>Арсений</p>
-                <p> ну , номер 174 буквы а , б</p>
+
+            <div className="messages">
+                <Message message={'fhkhdkdfdfhlfsf'}/>
             </div>
-            <input type="text" className="sendtext" placeholder="Введите сообщение"/>
-            <button className="send">Отправить</button>
+            <div className="code">
+                <input type="text" name="message" className="sendtext" placeholder="Введите сообщение"/>
+                <button className="send">Отправить</button>
+            </div>
         </div>
     )
 }
 export default Dialogs
-/*
-<div className="dialog">
-<div className="user">
-    <Navlink to="/dialogs/1">Ivan Ivanov</Navlink>
-</div>
-<div className="user">
-    <Navlink to="/dialogs/2">Anton Lopat</Navlink>
-</div>
-<div className="user">
-    <Navlink to="/dialogs/3">Elon Musk</Navlink>
-</div>
-</div>
-*/
