@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './Dialogs_item.css'
 
 function Dialogs_item(props) {
     return (<>

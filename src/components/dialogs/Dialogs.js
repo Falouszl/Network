@@ -5,18 +5,29 @@ import Message from "./messages/message";
 import ReactDOM from "react-dom";
 import { NavLink , BrowserRouter as Router ,  Switch,
     useLocation } from "react-router-dom";
+
+let dialogsNames = [
+                    { name:'Иван' , id:1 } , 
+                    { name:'Иллон' , id:2 } ,
+                    { name:'Аркадий' , id:3 }
+                   ];
+let messagesNames = [ 
+                    { message:'Даров, что задали?' , id: 1 } , 
+                    { message:'спроси у Аркаши' , id: 2 } , 
+                    { message:'Я учил знаю, 77' , id: 3 } 
+                    ];
+
 function Dialogs() {
     return (
         <div className="dialogs">
             <div className="dialog">
-                <Dialogs_item name={"Иван"} id={'1'}/>
-                <Dialogs_item name={"Иллон"} id={'2'}/>
-                <Dialogs_item name={"Аркадий"} id={'3'}/>
+                {dialogsNames.map((e) => <Dialogs_item name={e.name} id={e.id}/>)}
             </div>
 
             <div className="messages">
-                <Message message={'fhkhdkdfdfhlfsf'}/>
+                {messagesNames.map((e) => <Message message={e.message} id={e.id}/>)}
             </div>
+
             <div className="code">
                 <input type="text" name="message" className="sendtext" placeholder="Введите сообщение"/>
                 <button className="send">Отправить</button>
