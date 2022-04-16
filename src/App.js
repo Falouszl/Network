@@ -5,19 +5,18 @@ import Navbar from './components/navbar/Navbar';
 import Profile from './components/profile/Profile';
 import Dialogs from './components/dialogs/Dialogs';
 import Dialogs_item from './components/dialogs/dialogs_item/Dialogs_item';
-import { BrowserRouter , Route } from 'react-router-dom';
-
-function App() {
+import { BrowserRouter , Route , Switch } from 'react-router-dom';
+function App(props) {
   return (
     <div className='wrapper'>
       <BrowserRouter>
         <Header/>
         <Navbar/>
-        <div className='wrapper-content'>
-          <Route exact path="/profile" component={Profile}></Route>
-          <Route exact path="/" component={Profile}></Route>
-          <Route exact path="/dialogs" component={Dialogs}></Route>
-        </div>
+        <Switch>
+          <Route exact path="/profile" render={() =><Profile postsData={props.postsData}/>} />
+          <Route exact path="/" render={() =><Profile postsData={props.postsData}/>}/>
+          <Route exact path="/dialogs" render={() =><Dialogs dialogsNames = {props.dialogsNames} messagesNames = {props.messagesNames}/>}/>
+        </Switch>
       </BrowserRouter>
     </div>
   )
