@@ -1,27 +1,36 @@
-import React from "react";
-import './Dialogs.css';
-import Dialogs_item from "./dialogs_item/Dialogs_item";
-import Message from "./messages/message";
-import ReactDOM from "react-dom";
-import { NavLink , BrowserRouter as Router ,  Switch,
-    useLocation } from "react-router-dom";
+import React from 'react'
+import './Dialogs.css'
+
+import DialogsItem from './dialogsItem/DialogsItem'
+import Message from './message/Message'
+
+let ref = React.createRef();
+
 
 function Dialogs(props) {
+    let sendMessage = () => {
+        props.sendMessage(ref.current.value);
+        ref.current.value = '';
+    }
+    let onDialogChange = () => {
+        props.onDialogChange(ref.current.value)
+        ref.current.value = '';
+        console.log(ref.current.value)
+    }
     return (
         <div className="dialogs">
-            <div className="dialog">
-                {props.dialogsNames.map((e) => <Dialogs_item name={e.name} id={e.id}/>)}
-            </div>
-
-            <div className="messages">
-                {props.messagesNames.map((e) => <Message message={e.message} id={e.id}/>)}
-            </div>
-
-            <div className="code">
-                <input type="text" name="message" className="sendtext" placeholder="Введите сообщение"/>
-                <button className="send">Отправить</button>
-            </div>
+              <div className="dialog">
+                  {props.dialogsPage.dialogNames.map((e)=> <DialogsItem name={e.name} id={e.id}/> )}
+              </div>
+              <div className="messages">
+                  {props.dialogsPage.messageItems.map((e)=> <Message message={e.message} id={e.id}/> )}         
+              </div>
+              <div className="code">
+                    <input ref={ref} onChange={onDialogChange} value={props.newDialogText} type="text" name='message' placeholder="Enter your message"/>
+                    <button onClick={sendMessage}>Отправить</button>
+              </div>       
+            
         </div>
     )
-}
+  }
 export default Dialogs

@@ -1,0 +1,37 @@
+.dialogs {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.dialog {
+    width: 40%;
+    align-items: flex-start;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.messages {
+    width: 40%;
+    align-items: flex-start;
+    margin: 5px;
+}
+.messages p {
+    background-color: rgb(52, 15, 59);
+    margin: 10px 0px;
+    border-radius: 6px;
+    padding: 10px;
+}
+.send , .sendtext {
+    width: 200px;
+}
+.message>p ,.message >p  , .sendtext , .send{
+    margin: 30px;
+}
+.names {
+    background-color: rgb(52, 15, 59);
+    margin: 10px 0px;
+    border-radius: 6px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
